@@ -18,3 +18,28 @@
     margin-top: 18px;
   }
 }
+
+@media (max-width: $medium-max-width) {
+  .item {
+    width: 100px;
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .btn {
+    width: 70px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: $extra-small-max-width) {
+  .actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  .item {
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+}

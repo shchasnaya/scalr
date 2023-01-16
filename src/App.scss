@@ -1,0 +1,37 @@
+@import "src/style/variables";
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/assets-compressed/background/background.jpg");
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1140px;
+}
+
+@media (max-width: $large-max-width) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: $medium-max-width) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: $extra-small-max-width) {
+  .container {
+    width: 100vw;
+  }
+}

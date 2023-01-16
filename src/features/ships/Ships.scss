@@ -1,3 +1,5 @@
+@import "src/style/variables";
+
 .screen {
   display: flex;
   justify-content: space-between;
@@ -9,5 +11,12 @@
   width: 380px;
   &__row {
     position: relative;
+  }
+}
+
+@media (max-width: $extra-small-max-width) {
+  .screen {
+    flex-direction: column;
+    height: 80vh;
   }
 }

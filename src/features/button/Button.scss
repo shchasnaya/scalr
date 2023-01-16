@@ -16,3 +16,28 @@
   color: $title-color;
   cursor: pointer;
 }
+
+@media (max-width: $medium-max-width) {
+  .btn {
+    width: 100px;
+    height: 50px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: $small-max-width) {
+  .btn {
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $extra-small-max-width) {
+  .btn {
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    margin-bottom: 10vh;
+  }
+}

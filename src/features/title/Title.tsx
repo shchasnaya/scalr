@@ -1,8 +1,9 @@
+import {localization} from "../../localization/Localization";
 import './Title.scss'
 
 const Title = () => {
   return (
-      <div className="title">Battleship</div>
+      <div className="title">{localization.title}</div>
   );
 };
 

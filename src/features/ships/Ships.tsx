@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import "./Ships.scss"
+import {useEffect, useState} from 'react';
 import Cell from "../cell/Cell";
 import CellTitle from "../cell/CellTitle";
 import Button from "../button/Button";
 import Actions from "../actions/Actions";
 import Title from "../title/Title";
+import {localization} from "../../localization/Localization";
+import "./Ships.scss";
 
 interface objShip {
   x: number,
@@ -18,8 +19,8 @@ interface objShip {
 
 const Ships = () => {
 
-  const columnTitle = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'G'];
-  const rowTitle = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  const {columnTitle} = localization;
+  const {rowTitle} = localization;
   const [matrix, setMatrix] = useState<Array<Array<number>>>(Array(10).fill("").map(() => Array(10).fill(0)));
   const [refresh, setRefresh] = useState(false);
 

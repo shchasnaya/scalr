@@ -1,0 +1,17 @@
+@import "src/style/variables";
+
+.btn {
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 182px;
+  height: 72px;
+  background: $button-color;
+  box-shadow: 0 4px 14px rgba(183, 64, 27, 0.2);
+  border: none;
+  border-radius: 8px;
+  font: {
+    weight: 300;
+    size: 38px;
+  };
+  color: $title-color;
+}

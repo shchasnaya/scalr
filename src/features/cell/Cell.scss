@@ -1,0 +1,22 @@
+@import "src/style/variables";
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: $cell-color;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.5s;
+  &-ship {
+    background-color: $ship-color;
+  }
+  &-hit {
+    background-image: url("../../assets/assets-compressed/actions/hit.png");
+  }
+  &-miss {
+    background-image: url("../../assets/assets-compressed/actions/miss.png");
+  }
+  &__title {
+    color: $title-color;
+  }
+}

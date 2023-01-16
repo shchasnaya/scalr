@@ -1,0 +1,12 @@
+@import "src/style/variables";
+
+.title {
+  font: {
+    weight: 700;
+    size: 52px;
+  }
+  text-align: center;
+  text-transform: uppercase;
+  color: $title-color;
+  padding-top: 100px;
+}

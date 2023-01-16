@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import "./Ships.scss"
-import Cell from "./cell/Cell";
-import CellTitle from "./cell/CellTitle";
-import Button from "./button/Button";
+import Cell from "../cell/Cell";
+import CellTitle from "../cell/CellTitle";
+import Button from "../button/Button";
+import Actions from "../actions/Actions";
+import Title from "../title/Title";
 
 interface objShip {
   x: number,
@@ -52,7 +54,7 @@ const Ships = () => {
   const getCoordsDecks: any = (decks: number) => {
     let kx = getRandom(1), ky = (kx === 0) ? 1 : 0,
         x, y;
-    if (kx == 0) {
+    if (kx === 0) {
       x = getRandom(9);
       y = getRandom(10 - decks);
     } else {
@@ -76,8 +78,8 @@ const Ships = () => {
   }
 
   const checkLocationShip = (obj: any, decks: number) => {
-    let {x, y, kx, ky, fromX, toX, fromY, toY} = obj;
-    fromX = (x === 0) ? x : x - 1;
+    let {x, y, kx, ky, toX, fromY, toY} = obj;
+    const fromX = (x === 0) ? x : x - 1;
     if (x + kx * decks === 10 && kx === 1) toX = x + kx * decks;
     else if (x + kx * decks < 10 && kx === 1) toX = x + kx * decks + 1;
     else if (x === 9 && kx === 0) toX = x + 1;
@@ -100,29 +102,39 @@ const Ships = () => {
 
   return (
       <div>
-        <Button onPress={resetLocationShips} />
-        <table className="table">
-          <thead>
-          <tr>
-            <td></td>
-            {columnTitle.map((item, index) => (
-                <CellTitle key={index} name={item}/>
-            ))}
-          </tr>
-          </thead>
-          <tbody>
-          {matrix.map((item, index) => (
-              <>
-                <tr className="table__row" key={index}>
-                  <CellTitle key={index} name={rowTitle[index]} />
-                  {item.map((cell, indexCell) => (
-                      <Cell key={`${index}${indexCell}${refresh}`} cell={cell} />
-                  ))}
-                </tr>
-              </>
-          ))}
-          </tbody>
-        </table>
+        <Title />
+        <div className="screen">
+          <div className="actions">
+            <Actions />
+          </div>
+          <div className="table">
+            <table>
+              <thead>
+              <tr>
+                <td></td>
+                {columnTitle.map((item, index) => (
+                    <CellTitle key={index} name={item}/>
+                ))}
+              </tr>
+              </thead>
+              <tbody>
+              {matrix.map((item, index) => (
+                  <>
+                    <tr className="table__row" key={index}>
+                      <CellTitle key={index} name={rowTitle[index]} />
+                      {item.map((cell, indexCell) => (
+                          <Cell key={`${index}${indexCell}${refresh}`} cell={cell} />
+                      ))}
+                    </tr>
+                  </>
+              ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="reset">
+            <Button onPress={resetLocationShips} />
+          </div>
+        </div>
       </div>
   );
 };

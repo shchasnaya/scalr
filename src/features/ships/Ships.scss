@@ -1,7 +1,12 @@
+.screen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+
 .table {
-  display: block;
   width: 380px;
-  margin: 30px auto 0 auto;
   &__row {
     position: relative;
   }
